@@ -44,7 +44,7 @@ CREATE TABLE routes (
     CONSTRAINT fk_user
     FOREIGN KEY (user_id)
     REFERENCES users (user_id),
-    
+
     CONSTRAINT time_positive CHECK (route_time > 0),
     CONSTRAINT distance_positive CHECK (route_distance > 0)
 );
