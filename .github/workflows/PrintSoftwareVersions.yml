@@ -20,7 +20,7 @@ jobs:
           wget -q -O - https://yum.oracle.com/RPM-GPG-KEY-oracle-2023 | sudo gpg --dearmor -o /usr/share/keyrings/oracle-yum-keyring.gpg
           echo "deb [signed-by=/usr/share/keyrings/oracle-yum-keyring.gpg] https://yum.oracle.com/apt/oracle-instantclient/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/oracle-instantclient.list
           sudo apt-get update
-  
+      
       - name: Install Oracle Instant Client
         run: |
           sudo apt-get install -y oracle-instantclient-sqlplus
