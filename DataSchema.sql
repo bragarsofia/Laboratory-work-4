@@ -1,7 +1,7 @@
 -- 1. ТАБЛИЦЯ КОРИСТУВАЧІВ
 CREATE TABLE users (
     user_id INTEGER PRIMARY KEY,
-     user_name VARCHAR(100) NOT NULL,
+    user_name VARCHAR(100) NOT NULL,
     user_email VARCHAR(255) NOT NULL UNIQUE,
 
     -- Перевірка, що e_mail відповідає стандартному формату e-mail
@@ -15,7 +15,7 @@ CREATE TABLE users (
 
 -- 2. ТАБЛИЦЯ ЕКСПЕРТІВ
 CREATE TABLE experts (
-    expert_id INTEGER PRIMARY KEY
+    expert_id INTEGER PRIMARY KEY,
     expert_name VARCHAR(100) NOT NULL,
     expert_contact VARCHAR(255) NOT NULL UNIQUE,
     expert_status VARCHAR(10) NOT NULL,
@@ -29,8 +29,6 @@ CREATE TABLE experts (
 -- 3. ТАБЛИЦЯ КВАЛІФІКАЦІЙ 
 CREATE TABLE qualifications (
     qual_id INTEGER PRIMARY KEY,
-
-    
     qual_name VARCHAR(100) NOT NULL,
     qual_description VARCHAR(500)
 );
