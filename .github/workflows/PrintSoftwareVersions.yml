@@ -17,11 +17,11 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y wget gpg lsb-release
-          wget -q -O - https://download.oracle.com/otn_software/linux/instantclient/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/oracle-instantclient-keyring.gpg
-          echo "deb [signed-by=/usr/share/keyrings/oracle-instantclient-keyring.gpg] https://download.oracle.com/otn_software/linux/instantclient/apt $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/oracle-instantclient.list
+          wget -q -O - https://yum.oracle.com/RPM-GPG-KEY-oracle-2023 | sudo gpg --dearmor -o /usr/share/keyrings/oracle-yum-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/oracle-yum-keyring.gpg] https://yum.oracle.com/apt/oracle-instantclient/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/oracle-instantclient.list
           sudo apt-get update
-
-      - name: Install Oracle 
+  
+      - name: Install Oracle Instant Client
         run: |
           sudo apt-get install -y oracle-instantclient-sqlplus
 
