@@ -59,7 +59,7 @@ CREATE TABLE route_points (
     CONSTRAINT fk_route_points
     FOREIGN KEY (route_id)
     REFERENCES routes (route_id),
-    
+
     CONSTRAINT latitude_positive CHECK (point_latitude > 0),
     CONSTRAINT longitude_positive CHECK (point_longitude > 0)
 );
@@ -92,7 +92,7 @@ CREATE TABLE consultation_sessions (
     CONSTRAINT fk_session_expert
     FOREIGN KEY (expert_id)
     REFERENCES experts (expert_id),
-    
+
     CONSTRAINT duration_positive CHECK (duration > 0),
     CONSTRAINT rating_positive CHECK (quality_rating > 0)
 );
