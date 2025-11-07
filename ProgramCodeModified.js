@@ -1,2 +1,2 @@
-const productName = "Мій Програмний Продукт";
+const productName = "SafePath Navigator";
 console.log(productName);
